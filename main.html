@@ -17,15 +17,15 @@
             return true;
         }
 
-        function secondHighest(arr) {
-            if (arr.length <= 1 || areAllElementsSame(arr)) {
-                return Infinity;
-            } else {
-                arr = arr.map(Number); // Convert array elements to integers
-                arr.sort((a, b) => a - b);
-                return arr[arr.length - 2];
-            }
-        }
+      function secondHighest(arr) {
+    if (arr.length <= 1 || areAllElementsSame(arr)) {
+        return -Infinity;
+    } else {
+        arr = arr.map(Number); // Convert array elements to integers
+        arr.sort((a, b) => a - b);
+        return arr[arr.length - 2];
+    }
+}
 
         function Main() {
             var n = prompt("Enter the number of elements");
