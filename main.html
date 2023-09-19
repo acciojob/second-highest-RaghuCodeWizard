@@ -3,29 +3,44 @@
 <html>
 
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>	
-	<script>
-		function secondHighest(arr) {
-			//Write your code here
-			
-		}
+<body>
+    <script>
+        function areAllElementsSame(arr) {
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] !== arr[0]) {
+                    return false;
+                }
+            }
+            return true;
+        }
 
-		function Main() {
-			var n = prompt("Enter the number of elements");
-			var arr = [];
-			for (var i = 0; i < n; i++) {
-				arr[i] = prompt("Enter element " + (i+1));
-			}
-			alert(secondHighest(arr));
-		}
-		Main();
-	</script>
+        function secondHighest(arr) {
+            if (arr.length <= 1 || areAllElementsSame(arr)) {
+                return Infinity;
+            } else {
+                arr = arr.map(Number); // Convert array elements to integers
+                arr.sort((a, b) => a - b);
+                return arr[arr.length - 2];
+            }
+        }
+
+        function Main() {
+            var n = prompt("Enter the number of elements");
+            var arr = [];
+            for (var i = 0; i < n; i++) {
+                arr[i] = prompt("Enter element " + (i + 1));
+            }
+            alert(secondHighest(arr));
+        }
+        Main();
+
+    </script>
 
     <script type="text/javascript" src="./script.js">
-</script>
+    </script>
 
 </body>
 
